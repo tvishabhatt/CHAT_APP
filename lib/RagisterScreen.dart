@@ -1,10 +1,13 @@
+
 import 'package:chat_app/DeshBordScreen.dart';
 import 'package:chat_app/ForFuncations.dart';
 import 'package:chat_app/Google_abstract.dart';
+import 'package:chat_app/SharedPreferencesService.dart';
 import 'package:chat_app/main.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:provider/provider.dart';
 
 class RagisterScreen extends StatefulWidget {
   const RagisterScreen({Key? key}) : super(key: key);
@@ -81,6 +84,7 @@ class _RagisterScreenState extends State<RagisterScreen> with ForFuncations {
 
               await db.collection(collectionName).add(users);
               guest=false;
+              Provider.of<SharedPreferencesProvider>(context, listen: false).updateUserInfo(usernameController2.text,useremailController2.text);
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => DeshBordScreen(),));
 
             }else {
@@ -113,9 +117,7 @@ class _RagisterScreenState extends State<RagisterScreen> with ForFuncations {
             onTap: ()async {
               GoogleHelper().Signin(context, DeshBordScreen());
 
-
-
-            },
+              },
             child: Expanded(
               child: Container(
                 decoration: BoxDecoration(

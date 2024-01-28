@@ -8,10 +8,12 @@ import 'package:get_storage/get_storage.dart';
 import 'package:provider/provider.dart';
 
 
-late final FirebaseApp app;
+
 late final FirebaseAuth auth;
 
 void main() async{
+
+  late final FirebaseApp app;
   WidgetsFlutterBinding.ensureInitialized();
 
   try{

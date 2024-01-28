@@ -15,6 +15,7 @@ abstract class ThemeFunctions
   Color foryou();
   Widget Forfont({required String font, required double fontsize, required FontWeight fontweight, required Color color});
   Widget ForTextFiled({required String hint, required TextEditingController controller, required bool b});
+  Future<bool> checkIfEmailExists(String email);
 }
 
 mixin ForFuncations implements ThemeFunctions{
@@ -100,6 +101,14 @@ mixin ForFuncations implements ThemeFunctions{
       ),
     );
   }
+
+  @override
+ Future<bool> checkIfEmailExists(String email) async {
+   QuerySnapshot<Map<String, dynamic>> querySnapshot =
+   await db.collection(collectionName).where('Email', isEqualTo: email).get();
+
+   return querySnapshot.docs.isNotEmpty;
+ }
 
 
 }
