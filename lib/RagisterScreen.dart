@@ -3,7 +3,6 @@ import 'package:chat_app/DeshBordScreen.dart';
 import 'package:chat_app/ForFuncations.dart';
 import 'package:chat_app/Google_abstract.dart';
 import 'package:chat_app/SharedPreferencesService.dart';
-import 'package:chat_app/main.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -177,5 +176,14 @@ class _RagisterScreenState extends State<RagisterScreen> with ForFuncations {
     await db.collection(collectionName).where('Email', isEqualTo: email).get();
 
     return querySnapshot.docs.isNotEmpty;
+  }
+
+
+
+  void dispose(){
+    usernameController2.dispose();
+    userpasswordController2.dispose();
+    useremailController2.dispose();
+    super.dispose();
   }
 }

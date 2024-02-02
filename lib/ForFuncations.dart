@@ -28,6 +28,7 @@ mixin ForFuncations implements ThemeFunctions{
   FirebaseFirestore db = FirebaseFirestore.instance;
   RxBool isDarkMode=true.obs;
  dynamic user =FirebaseAuth.instance.currentUser;
+  final FirebaseAuth auth=FirebaseAuth.instance;
 
 
  @override

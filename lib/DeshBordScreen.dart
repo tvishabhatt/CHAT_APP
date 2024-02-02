@@ -4,7 +4,6 @@ import 'package:chat_app/ForFuncations.dart';
 import 'package:chat_app/LoginScreen.dart';
 import 'package:chat_app/RagisterScreen.dart';
 import 'package:chat_app/SettingScreen.dart';
-import 'package:chat_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 

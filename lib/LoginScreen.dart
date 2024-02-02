@@ -3,7 +3,6 @@ import 'package:chat_app/ForFuncations.dart';
 import 'package:chat_app/RagisterScreen.dart';
 import 'package:chat_app/SharedPreferencesService.dart';
 import 'package:chat_app/SplaceScreen.dart';
-import 'package:chat_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
@@ -152,7 +151,6 @@ class _LoginScreenState extends State<LoginScreen> with ForFuncations {
     }
   }
 
-  @override
   void dispose() {
     useremailController.dispose();
     usernameController.dispose();

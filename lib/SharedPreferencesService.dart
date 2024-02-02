@@ -1,9 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
-
-
 class SharedPreferencesProvider extends ChangeNotifier{
   late String _name;
   late String _email;

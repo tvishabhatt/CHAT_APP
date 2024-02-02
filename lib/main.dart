@@ -8,9 +8,6 @@ import 'package:get_storage/get_storage.dart';
 import 'package:provider/provider.dart';
 
 
-
-late final FirebaseAuth auth;
-
 void main() async{
 
   late final FirebaseApp app;
@@ -28,7 +25,7 @@ void main() async{
   catch(e){
     print('Firebase initialization failed: $e');
   }
-  auth = FirebaseAuth.instanceFor(app: app);
+  FirebaseAuth.instanceFor(app: app);
 
   await GetStorage.init();
   runApp(MultiProvider(
