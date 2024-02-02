@@ -1,11 +1,9 @@
-
 import 'package:chat_app/ForFuncations.dart';
 import 'package:chat_app/Google_abstract.dart';
 import 'package:chat_app/LoginScreen.dart';
 import 'package:chat_app/RagisterScreen.dart';
 import 'package:chat_app/SharedPreferencesService.dart';
 import 'package:chat_app/SplaceScreen.dart';
-import 'package:chat_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
