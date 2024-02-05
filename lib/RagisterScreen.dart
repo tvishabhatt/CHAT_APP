@@ -18,7 +18,7 @@ class RagisterScreen extends StatefulWidget {
 
 
 
-GoogleSignIn googleSignIn=GoogleSignIn();
+
 
 class _RagisterScreenState extends State<RagisterScreen> with ForFuncations {
 
