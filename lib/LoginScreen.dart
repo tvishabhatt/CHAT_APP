@@ -81,7 +81,6 @@ class _LoginScreenState extends State<LoginScreen> with ForFuncations {
                     duration: Duration(seconds: 3),
                   ));
                 }
-                guest=false;
 
 
               },

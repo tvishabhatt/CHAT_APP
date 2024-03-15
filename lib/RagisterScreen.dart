@@ -1,11 +1,8 @@
-
 import 'package:chat_app/DeshBordScreen.dart';
 import 'package:chat_app/ForFuncations.dart';
-import 'package:chat_app/Google_abstract.dart';
 import 'package:chat_app/SharedPreferencesService.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 
 class RagisterScreen extends StatefulWidget {
@@ -43,10 +40,8 @@ class _RagisterScreenState extends State<RagisterScreen> with ForFuncations {
               SizedBox(height: 20,),
               CreateAccount(),
               SizedBox(height: 10,),
-              Center(child: Forfont(font: "Or Create Account with ", fontsize: 22, fontweight: FontWeight.bold, color: fortext())),
-              SizedBox(height: 10,),
-              LoginWithGoogle(),
-              LoginWithGeust(),
+
+
 
 
             ],
@@ -82,7 +77,6 @@ class _RagisterScreenState extends State<RagisterScreen> with ForFuncations {
             if(!emailExists){
 
               await db.collection(collectionName).add(users);
-              guest=false;
               Provider.of<SharedPreferencesProvider>(context, listen: false).updateUserInfo(usernameController2.text,useremailController2.text);
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => DeshBordScreen(),));
 
@@ -106,70 +100,7 @@ class _RagisterScreenState extends State<RagisterScreen> with ForFuncations {
     );
   }
 
-  Widget LoginWithGoogle(){
-    return  Center(
-      child: Padding(
-        padding: const EdgeInsets.all(15),
-        child: SizedBox(height: 70,
-          child: InkWell(
 
-            onTap: ()async {
-              GoogleHelper().Signin(context, DeshBordScreen());
-
-              },
-            child: Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                  color:fortext(),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(12),
-                      child: Image(image: NetworkImage("https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"),height: 50,width: 50,),
-
-                    ),
-                    SizedBox(width: 15,),
-                    Forfont(font: "Sign in with Google", fontsize: 16, fontweight: FontWeight.bold, color: forbg()),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-
-    );
-  }
-
-  Widget LoginWithGeust(){
-    return       Center(
-      child: SizedBox(height: 50,
-        child: InkWell(onTap: () async{
-          try{
-            auth.signInAnonymously();
-           guest=true;
-          }
-          catch(value){
-            print(value);
-          }
-          await  Navigator.of(context).push(MaterialPageRoute(builder: (context) => DeshBordScreen(),));
-
-
-
-        }, child:Expanded(child: Container(
-            decoration: BoxDecoration(
-              color: isDarkMode.value?Colors.white:Colors.black,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Forfont(font: "Sign in as Geust",color:isDarkMode.value?Colors.black:Colors.white,fontsize: 16,fontweight: FontWeight.bold),
-            )))),
-      ),
-    );
-  }
 
   Future<bool> checkIfEmailExists(String email) async {
     QuerySnapshot<Map<String, dynamic>> querySnapshot =

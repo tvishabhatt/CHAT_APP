@@ -34,32 +34,7 @@ class _DeshBordScreenState extends State<DeshBordScreen> with ForFuncations{
           }, icon: Icon(Icons.person_2_rounded,size: 22,color:isDarkMode.value?Colors.white:Colors.black,)),
         ],
       ),
-      body:guest?
-      Center(
-          child:Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(mainAxisAlignment: MainAxisAlignment.center,crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text( "You'cant go Futher because you are geust . If you want to " ,style: TextStyle( fontSize: 16, fontWeight: FontWeight.bold, color: fortext()),textAlign: TextAlign.center,),
-                InkWell(
-
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => RagisterScreen()));
-                    },
-                    child: Forfont(font: "Create Account", fontsize: 16, fontweight: FontWeight.bold, color:isDarkMode.value?Colors.red:Colors.blue)),
-                Text( "or " ,style: TextStyle( fontSize: 16, fontWeight: FontWeight.bold, color: fortext())),
-
-
-                InkWell(
-
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginScreen()));
-                    },
-                    child: Forfont(font: "Log in ", fontsize: 16, fontweight: FontWeight.bold, color: isDarkMode.value?Colors.red:Colors.blue)),
-              ],
-            ),
-          )):
-      StreamBuilder<QuerySnapshot>(
+      body: StreamBuilder<QuerySnapshot>(
           stream: FirebaseFirestore.instance.collection(collectionName).snapshots(),
           builder: (context, snapshot) {
             if(!snapshot.hasData){

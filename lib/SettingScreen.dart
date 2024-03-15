@@ -1,5 +1,4 @@
 import 'package:chat_app/ForFuncations.dart';
-import 'package:chat_app/Google_abstract.dart';
 import 'package:chat_app/LoginScreen.dart';
 import 'package:chat_app/RagisterScreen.dart';
 import 'package:chat_app/SharedPreferencesService.dart';
@@ -101,11 +100,9 @@ class _SettingScreenState extends State<SettingScreen> with ForFuncations {
                     color: fortext()),
                 IconButton(
                     onPressed: () async {
-                      if (auth.currentUser != null) {
+
                         await auth.signOut();
-                      } else {
-                        await GoogleHelper().logout();
-                      }
+
                       final prefs = await SharedPreferences.getInstance();
                       prefs.setBool(SplaceScreenState.KEYLOGIN, false);
 

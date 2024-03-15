@@ -24,7 +24,7 @@ mixin ForFuncations implements ThemeFunctions{
  String  collectionNameOfChatrooms='CHAT_ROOMS';
   String collectionName='USERS';
   String collectionOfMesaages="MESSAGES";
-  bool guest=false;
+
   FirebaseFirestore db = FirebaseFirestore.instance;
   RxBool isDarkMode=true.obs;
  dynamic user =FirebaseAuth.instance.currentUser;
