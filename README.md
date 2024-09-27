@@ -14,7 +14,14 @@ Theme Switching: Users can toggle between light and dark modes.
 
 ### 📱 Screenshots
 
+<h2>📸 Screenshots</h2>
+
 <table align="center">
+  <tr>
+    <th>Login Screen</th>
+    <th>Chat Screen</th>
+    <th>User List</th>
+  </tr>
   <tr>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/9124eba0-c7a4-44a2-8b08-9b31183051ba" alt="Login Screen" width="250"/>
@@ -25,6 +32,14 @@ Theme Switching: Users can toggle between light and dark modes.
     <td align="center">
       <img src="https://github.com/user-attachments/assets/b85b0a24-c47d-4065-8be6-ea5c66097293" alt="User List" width="250"/>
     </td>
+  </tr>
+</table>
+
+<table align="center">
+  <tr>
+    <th>Chat Screen Dark Theme</th>
+    <th>Settings</th>
+    <th>Chat Screen</th>
   </tr>
   <tr>
     <td align="center">
@@ -38,6 +53,7 @@ Theme Switching: Users can toggle between light and dark modes.
     </td>
   </tr>
 </table>
+
 
 
 ### 🎥 Demo Video
